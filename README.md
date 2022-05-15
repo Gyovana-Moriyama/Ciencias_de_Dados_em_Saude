@@ -101,7 +101,7 @@ The data provided is from a synthetic medical database, Synthea. This one provid
 
 
  
-**organizations** - 
+**organizations** - Provider organizations including hospitals
 
 | Column          | Description                                                                               |
 | :---            | :---                                                                                      |
