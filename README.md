@@ -27,9 +27,91 @@ In this project we will predict whether patients who had a Acute deep venous thr
 > Abordagem adotada pelo projeto na predição. Justificar as escolhas e (opcionalmente) apresentar fundamentos teóricos.
 
 ## Bases Adopted for the Study
+
 We choose to these bases because on scenario01 and scenario02 we found a really small number of rows with our patientes of interest.
+
 * scenario04
 * scenario03
+
+The data provided is from a synthetic medical database, Synthea. This one provides us with several tables with various information about the patient. We will use the following tables and information:
+
+**patients**
+
+| Column    | Description                                                                   |
+| :---      | :---                                                                          |
+| Id        | key to that identifies the patient                                            |
+| BIRTHDATE | patient birthdate                                                             |
+| DEATHDATE | patient deathdate (if empty we will consider that the patient is still alive) |
+|GENDER     | patient gender                                                                |
+
+
+**encounters**
+
+| Column          | Description                                                                               |
+| :---            | :---                                                                                      |
+| Id              | key that identifies the encounter                                                         |
+| START           | encounter start date                                                                      |
+| STOP            | encounter end date                                                                        |
+| PATIENT         | key to that identifies the patient                                                        |
+| ORGANIZATION    |  key of the organization that the encounter took place                                    |
+| ENCOUNTERCLASS  | encounter class, as: ambulatory, emergency, inpatient, wellness, ou urgentcare            |
+
+
+**conditions**
+
+| Column          | Description                                                                               |
+| :---            | :---                                                                                      |
+| START           | condition start date                                                                      |
+| STOP            | condition end date                                                                        |
+| PATIENT         | key to that identifies the patient                                                        |
+| ENCOUNTER       | key that identifies the encounter                                                         |
+| CODE            | SNOMED-ST code of the condition                                                           |
+| DESCRIPTION     | description of the condition                                                              |
+
+
+**imaging_studies**
+
+| Column          | Description                                                                               |
+| :---            | :---                                                                                      |
+| PATIENT         | key to that identifies the patient                                                        |
+| ENCOUNTER       | key that identifies the encounter                                                         |
+| MODALITY_CODE   |  code that identifies the type of imaging exam                                            |
+| Id              | key that identifies each imaging exam                                                     |
+
+
+**medications**
+
+| Column          | Description                                                                               |
+| :---            | :---                                                                                      |
+| START           | medication start date                                                                     |
+| STOP            | medication end date                                                                       |
+| PATIENT         | key to that identifies the patient                                                        |
+| ENCOUNTER       | key that identifies the encounter                                                         |
+| CODE            | RxNorm medication code                                                                    |
+| DESCRIPTION     | medication description                                                                    |
+
+
+**organizations**
+
+| Column          | Description                                                                               |
+| :---            | :---                                                                                      |
+| Id              | key that identifies the organization                                                      |
+| NAME            | name of the organization                                                                  |
+
+
+**procedures**
+
+| Column          | Description                                                                               |
+| :---            | :---                                                                                      |
+| START           | procedure start date                                                                      |
+| STOP            | procedure end date                                                                        |
+| PATIENT         | key to that identifies the patient                                                        |
+| ENCOUNTER       | key that identifies the encounter                                                         |
+|  CODE           | SNOMED-CT code of the procedure                                                           |
+| DESCRIPTION     | description of the procedure                                                              |
+
+## Our Dataframe
+> Explicar as colunas do nosso df final (descrever as features)
 
 # Results 
 > Esta seção pode opcionalmente ser apresentada em conjunto com a metodologia, intercalando método e resultados.
@@ -64,8 +146,12 @@ We choose to these bases because on scenario01 and scenario02 we found a really 
 > A discussão dos resultados também pode ser feita opcionalmente na seção de Resultados, na medida em que os resultados são apresentados. Aspectos importantes a serem discutidos: É possível tirar conclusões dos resultados? Quais? Há indicações de direções para estudo? São necessários trabalhos mais profundos?
 
 # Conclusion
-
+Explicar o motivo para ter usado cada tipo de encoder e suas limitações: por exemplo, atribuir o valor 0 para uma das categorias por ter "consequências"
 ## Future work
+
+Trabalhos Futuros: criar uma feature "quantidade de condições" que diz quantas condições "ruins" aquela pessoa tem
+
+
 > Destacar as principais conclusões obtidas no desenvolvimento do projeto.
 >
 > Destacar os principais desafios enfrentados.
