@@ -34,21 +34,21 @@ We chose to look at a time window of 5 years because it is enough time to treat 
 
 ## Bases Adopted for the Study
 
-We choose to these bases because on scenario01 and scenario02 we found a really small number of rows with our patientes of interest.
+We choose these two bases because on scenario01 and scenario02 we found a really small number of ocurrencies of our patients of interest.
 
 * scenario04
 * scenario03
 
-The data provided is from a synthetic medical database, Synthea. This one provides us with several tables with various information about the patient. We will use the following tables and information:
+The data provided is from a synthetic medical database, Synthea. This one provides us with several tables with various information about the patient. We will use the following tables and informations:
 
 **patients**
 
 | Column    | Description                                                                    |
 | :---      | :---                                                                           |
-| Id        | key to that identifies the patient                                             |
+| Id        | key that identifies the patient                                                |
 | BIRTHDATE | patient birthdate                                                              |
-| DEATHDATE | patient death date (if empty we will consider that the patient is still alive) |
-|GENDER     | patient gender                                                                 |
+| DEATHDATE | patient death date                                                             |
+| GENDER    | patient gender                                                                 |
 
 
 **encounters**
@@ -58,8 +58,8 @@ The data provided is from a synthetic medical database, Synthea. This one provid
 | Id              | key that identifies the encounter                                                         |
 | START           | encounter start date                                                                      |
 | STOP            | encounter end date                                                                        |
-| PATIENT         | key to that identifies the patient                                                        |
-| ORGANIZATION    |  key of the organization that the encounter took place                                    |
+| PATIENT         | key that identifies the patient                                                           |
+| ORGANIZATION    | key of the organization that the encounter took place                                     |
 | ENCOUNTERCLASS  | encounter class, as: ambulatory, emergency, inpatient, wellness, ou urgentcare            |
 
 
@@ -79,9 +79,9 @@ The data provided is from a synthetic medical database, Synthea. This one provid
 
 | Column          | Description                                                                               |
 | :---            | :---                                                                                      |
-| PATIENT         | key to that identifies the patient                                                        |
+| PATIENT         | key that identifies the patient                                                           |
 | ENCOUNTER       | key that identifies the encounter                                                         |
-| MODALITY_CODE   |  code that identifies the type of imaging exam                                            |
+| MODALITY_CODE   | code that identifies the type of imaging exam                                             |
 | Id              | key that identifies each imaging exam                                                     |
 
 
@@ -91,7 +91,7 @@ The data provided is from a synthetic medical database, Synthea. This one provid
 | :---            | :---                                                                                      |
 | START           | medication start date                                                                     |
 | STOP            | medication end date                                                                       |
-| PATIENT         | key to that identifies the patient                                                        |
+| PATIENT         | key that identifies the patient                                                           |
 | ENCOUNTER       | key that identifies the encounter                                                         |
 | CODE            | RxNorm medication code                                                                    |
 | DESCRIPTION     | medication description                                                                    |
@@ -111,7 +111,7 @@ The data provided is from a synthetic medical database, Synthea. This one provid
 | :---            | :---                                                                                      |
 | START           | procedure start date                                                                      |
 | STOP            | procedure end date                                                                        |
-| PATIENT         | key to that identifies the patient                                                        |
+| PATIENT         | key that identifies the patient                                                           |
 | ENCOUNTER       | key that identifies the encounter                                                         |
 |  CODE           | SNOMED-CT code of the procedure                                                           |
 | DESCRIPTION     | description of the procedure                                                              |
