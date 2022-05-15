@@ -37,12 +37,12 @@ The data provided is from a synthetic medical database, Synthea. This one provid
 
 **patients**
 
-| Column    | Description                                                                   |
-| :---      | :---                                                                          |
-| Id        | key to that identifies the patient                                            |
-| BIRTHDATE | patient birthdate                                                             |
-| DEATHDATE | patient deathdate (if empty we will consider that the patient is still alive) |
-|GENDER     | patient gender                                                                |
+| Column    | Description                                                                    |
+| :---      | :---                                                                           |
+| Id        | key to that identifies the patient                                             |
+| BIRTHDATE | patient birthdate                                                              |
+| DEATHDATE | patient death date (if empty we will consider that the patient is still alive) |
+|GENDER     | patient gender                                                                 |
 
 
 **encounters**
