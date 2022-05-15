@@ -150,6 +150,24 @@ The data provided is from a synthetic medical database, Synthea. This one provid
 >     * como analisar e interpretar as diferenças?
 > * testar diferentes composições de dados sobre o paciente para a predição (por exemplo, quantidade diversificadas de número de itens).
 
+Input: scenario03.csv and scenario04.csv
+
+With this input we've made different compositions, as follows:
+ * Scenario04 as train and Scenario03 as test.
+ * Scenario03 as train and Scenario04 as test.
+ * Mixing both and doing a train-test split
+
+For each of this, we still have subdivisions: 
+* Unbalanced data, using all features
+* Unbalanced, using only features that already existed on the original tables
+* Unbalanced, removing only the feature "condition_dur"
+* Oversampled data, using all features
+* Oversampled, using only features that already existed on the original tables
+* Oversampled, removing only the feature "condition_dur"
+
+After testing the models using all features, we noticed that the feature "condition_dur" that we've created was extremely correlated to the target (0.95). Consulting the specialist we also discovered that on a real environment we probably wouldn't have the "stop_condition" value that is used to create the "condition_dur" feature.
+So we've opted to test the models performances excluding this feature as well.
+
 # Project Evolution
 > Seção opcional se houver histórico de mudanças e evolução relevantes.
 > Relate aqui a evolução do projeto: possíveis problemas enfrentados e possíveis mudanças de trajetória. Relatar o processo para se alcançar os resultados é tão importante quanto os resultados.
