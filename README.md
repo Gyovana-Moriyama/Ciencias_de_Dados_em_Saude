@@ -30,7 +30,6 @@ We chose to look at a time window of 5 years because it is enough time to treat 
 *  Scikit-learn
 
 # Methodology
-> Abordagem adotada pelo projeto na predição. Justificar as escolhas e (opcionalmente) apresentar fundamentos teóricos.
 
 ## Bases Adopted for the Study
 
@@ -51,6 +50,7 @@ The data provided is from a synthetic medical database, Synthea. This one provid
 | GENDER    | patient gender                                                                 |
 
 
+ 
 **encounters** - Patient encounter data
 
 | Column          | Description                                                                               |
@@ -62,6 +62,7 @@ The data provided is from a synthetic medical database, Synthea. This one provid
 | ORGANIZATION    | key of the organization that the encounter took place                                     |
 | ENCOUNTERCLASS  | encounter class, as: ambulatory, emergency, inpatient, wellness, ou urgentcare            |
 
+ 
 
 **conditions** - Patient conditions or diagnoses
 
@@ -74,6 +75,7 @@ The data provided is from a synthetic medical database, Synthea. This one provid
 | CODE            | SNOMED-ST code of the condition                                                           |
 | DESCRIPTION     | description of the condition                                                              |
 
+ 
 
 **imaging_studies** - Patient imaging metadata
 
@@ -85,6 +87,7 @@ The data provided is from a synthetic medical database, Synthea. This one provid
 | Id              | key that identifies each imaging exam                                                     |
 
 
+ 
 **medications** - Patient medication data
 
 | Column          | Description                                                                               |
@@ -97,6 +100,7 @@ The data provided is from a synthetic medical database, Synthea. This one provid
 | DESCRIPTION     | medication description                                                                    |
 
 
+ 
 **organizations** - 
 
 | Column          | Description                                                                               |
@@ -105,6 +109,7 @@ The data provided is from a synthetic medical database, Synthea. This one provid
 | NAME            | name of the organization                                                                  |
 
 
+ 
 **procedures** - Patient procedure data including surgeries
 
 | Column          | Description                                                                               |
@@ -116,6 +121,7 @@ The data provided is from a synthetic medical database, Synthea. This one provid
 |  CODE           | SNOMED-CT code of the procedure                                                           |
 | DESCRIPTION     | description of the procedure                                                              |
 
+ 
 ## Our Dataframe
 > Explicar as colunas do nosso df final (descrever as features)
 
