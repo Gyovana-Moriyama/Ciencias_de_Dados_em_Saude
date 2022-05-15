@@ -29,7 +29,7 @@ We chose to look at a time window of 5 years because it is enough time to treat 
 *  SMOTE
 *  Scikit-learn
 
-# Metodology
+# Metkodology
 > Abordagem adotada pelo projeto na predição. Justificar as escolhas e (opcionalmente) apresentar fundamentos teóricos.
 
 ## Bases Adopted for the Study
@@ -41,7 +41,7 @@ We choose these two bases because on scenario01 and scenario02 we found a really
 
 The data provided is from a synthetic medical database, Synthea. This one provides us with several tables with various information about the patient. We will use the following tables and informations:
 
-**patients**
+**patients** - Patient demographic data
 
 | Column    | Description                                                                    |
 | :---      | :---                                                                           |
@@ -51,7 +51,7 @@ The data provided is from a synthetic medical database, Synthea. This one provid
 | GENDER    | patient gender                                                                 |
 
 
-**encounters**
+**encounters** - Patient encounter data
 
 | Column          | Description                                                                               |
 | :---            | :---                                                                                      |
@@ -63,7 +63,7 @@ The data provided is from a synthetic medical database, Synthea. This one provid
 | ENCOUNTERCLASS  | encounter class, as: ambulatory, emergency, inpatient, wellness, ou urgentcare            |
 
 
-**conditions**
+**conditions** - Patient conditions or diagnoses
 
 | Column          | Description                                                                               |
 | :---            | :---                                                                                      |
@@ -75,7 +75,7 @@ The data provided is from a synthetic medical database, Synthea. This one provid
 | DESCRIPTION     | description of the condition                                                              |
 
 
-**imaging_studies**
+**imaging_studies** - Patient imaging metadata
 
 | Column          | Description                                                                               |
 | :---            | :---                                                                                      |
@@ -85,7 +85,7 @@ The data provided is from a synthetic medical database, Synthea. This one provid
 | Id              | key that identifies each imaging exam                                                     |
 
 
-**medications**
+**medications** - Patient medication data
 
 | Column          | Description                                                                               |
 | :---            | :---                                                                                      |
@@ -97,7 +97,7 @@ The data provided is from a synthetic medical database, Synthea. This one provid
 | DESCRIPTION     | medication description                                                                    |
 
 
-**organizations**
+**organizations** - 
 
 | Column          | Description                                                                               |
 | :---            | :---                                                                                      |
@@ -105,7 +105,7 @@ The data provided is from a synthetic medical database, Synthea. This one provid
 | NAME            | name of the organization                                                                  |
 
 
-**procedures**
+**procedures** - Patient procedure data including surgeries
 
 | Column          | Description                                                                               |
 | :---            | :---                                                                                      |
