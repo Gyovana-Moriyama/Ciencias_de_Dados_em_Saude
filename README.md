@@ -29,7 +29,7 @@ We chose to look at a time window of 5 years because it is enough time to treat 
 *  SMOTE
 *  Scikit-learn
 
-# Metkodology
+# Methodology
 > Abordagem adotada pelo projeto na predição. Justificar as escolhas e (opcionalmente) apresentar fundamentos teóricos.
 
 ## Bases Adopted for the Study
