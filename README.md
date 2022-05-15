@@ -123,6 +123,10 @@ The data provided is from a synthetic medical database, Synthea. This one provid
 
  
 ## Our Dataframe
+
+### Pre-processing
+
+### Feature Engineering
 > Explicar as colunas do nosso df final (descrever as features)
 
 # Results 
