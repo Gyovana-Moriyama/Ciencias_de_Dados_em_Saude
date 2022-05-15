@@ -14,6 +14,12 @@ This project originated in the context of the activities of the course Science a
 > Apresentação da proposta de predição indicando os parâmetros adotados para a mesma com a justificativa (por que esses parâmetros foram adotados?). O ideal é que a proposta seja apresentada como uma pergunta de pesquisa.
 
 In this project we will predict whether patients who had a Acute deep venous thrombosis (disorder) condition (SNOMED-CT: 132281000119108) will die within a maximum of 5 years.
+We chose this condition because according to a specialist: 
+ * It is a fairly common one, which gives us a good amount of data to work with.
+ * It affects both men and women of all ages.
+ * It's severity is linked to a lot of different factors, which makes it a non-trivial problem.
+
+We chose to look at a time window of 5 years because it is enough time to treat the underlying cause or to define that the pacient belongs to a very high risk group. So the thrombosis would have a higher chance to contribute to the pacient death.
 
 ### Tools
 *  Pandas
