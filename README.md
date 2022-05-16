@@ -162,7 +162,7 @@ With this input we've made different compositions, as follows:
  * Scenario03 as train and Scenario04 as test
  * Mixing both and doing a train-test split
 
-For each of this, we still have subdivisions: 
+For each of this, we still have this subdivisions: 
 * Unbalanced data, using all features
 * Unbalanced, using only features that already existed on the original tables
 * Unbalanced, removing only the feature "condition_dur"
@@ -201,7 +201,7 @@ We tried different machine learning models for each subdivision of each dataset 
 >
 > A discussão dos resultados também pode ser feita opcionalmente na seção de Resultados, na medida em que os resultados são apresentados. Aspectos importantes a serem discutidos: É possível tirar conclusões dos resultados? Quais? Há indicações de direções para estudo? São necessários trabalhos mais profundos?
 
-After testing the models using all features, we noticed that the feature "condition_dur" that we've created was extremely correlated to the target (0.95). Consulting the specialist we also discovered that on a real environment we probably wouldn't have the "stop_condition" value that is used to create the "condition_dur" feature.
+After testing the models using all features, we noticed that the feature "condition_dur" that we've created was extremely correlated to the target (0.97). Consulting the specialist we also discovered that on a real environment we probably wouldn't have the "stop_condition" value that is used to create the "condition_dur" feature.
 So we've opted to test the models performances excluding this feature as well.
 
 Here we can see the heatmap of the features correlation:
