@@ -182,15 +182,15 @@ We tried different machine learning models for each subdivision of each dataset 
 
 ### Results
 
-**Scenario04 as train and Scenario03 as test:**
+**Scenario04 (630 patients) as train and Scenario03 (70 patients) as test:**
 
 ![04_03](https://user-images.githubusercontent.com/38329077/168673461-26de4a38-bdf7-4b8e-b4e9-e2f0427f778f.png)
 
-**Scenario03 as train and Scenario04 as test:**
+**Scenario03 (70 patients) as train and Scenario04 (630 patients) as test:**
 
 ![03_04](https://user-images.githubusercontent.com/38329077/168673672-0b973eec-896b-4aad-a3b6-80d26d3e040f.png)
 
-**Mixing both and doing a train-test split:**
+**Mixing both and doing a train-test split (630 for train and 70 for test):**
 
 ![mixed](https://user-images.githubusercontent.com/38329077/168673740-35c6a7ef-7c68-49f9-8daa-961a2aaaaae7.png)
 
