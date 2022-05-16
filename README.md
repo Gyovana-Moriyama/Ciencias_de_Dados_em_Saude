@@ -206,6 +206,9 @@ So we've opted to test the models performances excluding this feature as well.
 
 Here we can see the heatmap of the features correlation:
 
+![image](https://user-images.githubusercontent.com/38329077/168676969-9f1cb909-da1c-42a7-b157-7d5e1a6b6177.png)
+
+
 ## Project Evolution
 > Seção opcional se houver histórico de mudanças e evolução relevantes.
 > Relate aqui a evolução do projeto: possíveis problemas enfrentados e possíveis mudanças de trajetória. Relatar o processo para se alcançar os resultados é tão importante quanto os resultados.
