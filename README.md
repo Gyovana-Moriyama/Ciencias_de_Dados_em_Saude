@@ -151,11 +151,11 @@ The data provided is from a synthetic medical database, Synthea. This one provid
 
 ### The problem: 
 
-As we were trying to predict if the patient died within 5 years, we had a **classification** problem where 1 indicates that the patient died and 0 that the patient is alive or died after the 5 years interval. 
+As we were trying to predict if the patient died within a maximum of 5 years, we had a **classification** problem where 1 indicates that the patient died and 0 that the patient is alive or died after the 5 years interval. 
 
 ### Input: 
 
-scenario03.csv and scenario04.csv
+**scenario03.csv and scenario04.csv**
 
 With this input we've made different compositions, as follows:
  * Scenario04 as train and Scenario03 as test
