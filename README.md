@@ -204,6 +204,8 @@ We tried different machine learning models for each subdivision of each dataset 
 After testing the models using all features, we noticed that the feature "condition_dur" that we've created was extremely correlated to the target (0.97). Consulting the specialist we also discovered that on a real environment we probably wouldn't have the "stop_condition" value that is used to create the "condition_dur" feature.
 So we've opted to test the models performances excluding this feature as well.
 
+It is important to highlight a disclaimer in regard to the stop_condition information. Acute deep venous thrombosis is a condition that often requires long-term anticoagulation therapy and follow-up. The criteria to consider the "stop" is unclear in the data provided (e.g.: cease anticoagulant therapy, absence of clinical signs or symptoms of thrombosis, adequate pain and edema management, etc.) and may not be applicable in other scenarios.
+
 Here we can see the heatmap of the features correlation:
 
 ![image](https://user-images.githubusercontent.com/38329077/168676969-9f1cb909-da1c-42a7-b157-7d5e1a6b6177.png)
