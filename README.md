@@ -131,28 +131,35 @@ Our first processing was to convert data columns to *datetime* type, in order to
 #### Feature Engineering
 
 **cts:**
+
 For this feature we focused specifically on the CT (Computed Tomography) exam. Our belief was that patients with a severe case of thrombosis were more susceptible to take this exam. So we used the *images* table, and counted every occurrence for code = 'CT' for the patient. The count is more relevant than a boolean because the recurrence of this exam also means higher severity for the condition.
 
 **contraceptive, anticoagulant and cnt_medications:**
+
 These 3 features were all created using the *medications* table. Contraceptives and anticoagulants are medicines commonly taken by patients with thrombosis. If a patient has taken a lot of contraceptives it is more susceptible to develop thrombosis, and if a patient has thrombosis but is taking anticoagulants, it is more likely to recover from the condition as anticoagulant is a medicine commonly used to treat thrombosis. We count how many distinct contraceptives and anticoagulants were taken by the patient, it gives more information than just if the patient has taken or not, similar to cts.
 
 For cnt_medications we counted the amount of different medication taken by each patient, so it may indicate other health issues.
 
 **cnt_procedures:**
+
 Venous thrombosis may be a result of complications from a surgery. This feature use *procedures* table and count how many surgeries the patient was undergone, patients with a lot of surgeries are more likely to have other serious health issues. 
 
 **age:**
+
 This feature may be the actual age of the patient or, if the patient has died, it is the age it had when it died. If the patient does not have a value for deathdate, we consider the patient is still alive, so we do *(today - birthdate)*, otherwise we do *(deathdate - birthdate)*.
 
 **cnt_encounters:**
+
 Patients with a big number of medical encounters are probably patients with more health issues and therefore it has a greater chance of death. So we counted how many different medical encounters the patient had.
 
 **last_encounter_dur and condition_dur:**
+
 For these features we are interested in the treatment time during the medical encounter for each patient.
 The former, last_encounter_dur, we search when the last medical encounter with thrombosis has started and ended. The difference in days between the two dates is the feature we are looking for. If the encounter has not ended yet, it is the difference of days between the start of the encounter and today.
 The latter, condition_dur, is the difference of days between the first occurrence of the condition until the end of the condition. If the condition has not ended yet, it is the difference of days between the start of the condition and today.
 
 **target:**
+
 Our ground truth indicates if the patient died within 5 years after the end of the last encounter with the condition of thrombosis.
 
 ## Results 
