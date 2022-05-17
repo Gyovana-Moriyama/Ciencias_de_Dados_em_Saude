@@ -182,17 +182,47 @@ We tried different machine learning models for each subdivision of each dataset 
 
 ### Results
 
+Here we are presenting metrics results for the test.
+
 **Scenario04 (630 patients) as train and Scenario03 (70 patients) as test:**
 
-![04_03](https://user-images.githubusercontent.com/38329077/168673461-26de4a38-bdf7-4b8e-b4e9-e2f0427f778f.png)
+![04_03_new](https://user-images.githubusercontent.com/38329077/168700205-3a43b0b0-c175-43ae-b39b-486b4c5644fe.png)
+
+On this composition we can see that in Imbalanced with all features and SMOTE with all features, Random Forest, LGBM and XGBoost achieved 1.0 on all three metrics, which means the models really predicted correct all labels, we believe this happened because of the correlation of the features with target and that the models trained on a larger base compared to the test, so the models really learned how to separate the positive and negative classes, as we can see for AUC = 1.0.
+
+For the tests with just the original features we can see that either on imbalanced and with SMOTE, the models performed poorly, we believe this happened because of the low quantity of features and that the features are not explanatory for the problem, so the models do not learn to separate the positive and negative classes, as we can see for AUC around 0.5. Also, we can see that the models do not really predict positive classes right, as we have really low values for F1 score.
+
+Finally, for tests without 'condition_dur' feature, in the imbalanced case most of the models still perform well, but for the tests with SMOTE, half of models had a low accuracy and F1 score, so we can see that they are not predicting well for both classes, although all of them have high AUC. Therefore we can conclude that even if the models learned how to separate the classes (high AUC), they did not predicted right both classes (low accuracy and low F1 score).
+
+In conclusion for this composition we can see that the best option is to use all features and imbalanced data, 
+
+> tentar falar o pq do com SMOTE nao ter sido o melhor
 
 **Scenario03 (70 patients) as train and Scenario04 (630 patients) as test:**
 
-![03_04](https://user-images.githubusercontent.com/38329077/168673672-0b973eec-896b-4aad-a3b6-80d26d3e040f.png)
+![03_04_new](https://user-images.githubusercontent.com/38329077/168700183-25bf90ef-1443-43c1-8311-f580aca87ace.png)
+
+On this composition the tests on either imbalanced and with SMOTE data and with all features were the best, this time they did not get 1.0 on any metrics, but got really close. Here the models got high values for all three metrics, so we can see that the models learned how to distinguish between the classes (high AUC) and predicted almost all correct (high accuracy and F1 score).
+
+For the tests with just the original features we can see that either on imbalanced and with SMOTE data, the models performed poorly. For the tests on imbalanced data, we have a high accuracy but low AUC and F1 score, so we can say that the models might be predicting the majority class (class 0), so they are did not learn how to distinguish between the classes (AUC around 0.5) and are not predicting the positive class right (low F1 score).
+
+Finally, for the tests without 'condition_dur', we can see that most of the models performed well and both imbalanced and with SMOTE had similar results for each model except for Logistic Regression that even with a high AUC, had a low F1 score and accuracy, so we can say that this model learned to distinguish between the classes but did not predict right the classes.
+
+In conclusion for this composition, we can see that as the train data was smaller, the models did not learn as well as the composition above. Therefore the best results were produced by the models on imbalanced data, which is similar to the composition above.
 
 **Mixing both and doing a train-test split (630 for train and 70 for test):**
 
-![mixed](https://user-images.githubusercontent.com/38329077/168673740-35c6a7ef-7c68-49f9-8daa-961a2aaaaae7.png)
+![mixed_new](https://user-images.githubusercontent.com/38329077/168700216-6037a8d5-689e-4175-a76e-a6290b42110b.png)
+
+On this composition the tests on either imbalanced and with SMOTE data and with all features were the best Random Forest, LGBM and XGBoost achieved 1.0 on all three metrics, which means that the these models learned how to distinguish between the classes (AUC = 1.0) and predicted both classes right for all cases (accuracy = 1.0 and F1 score = 1.0).
+
+For the test with just the original features we can see that all the models produced the same scores on either imbalanced and with SMOTE data. For the imbalanced data, we have high accuracy, but low AUC and F1 score, which means that the models did not learn how to distinguish between the classes (AUC around 0.5) and that they are not predicting the positive class right (F1 score low or equals zero), so we can say that the models might be predicting the target ad the majority class (class 0), what would explain the high accuracy and low AUC and F1 score. Considering the data with SMOTE, we have all the three metrics with low values, which indicates that the models are not predicting the majority class as the target, and did not learn to distinguish between the classes and to predict the positive class right.
+
+Finally, for the tests without 'condition_dur', we can see that all models performed well on both imbalanced and with SMOTE data, for all three metrics. Even though the models did not have the best result for this composition, the subdivision got really satisfactory results.
+
+In conclusion for this composition, we can see that the models performed the best with all features on both imbalanced and with SMOTE data.
+
+> Colocar mais alguma coisa na conclusao 
 
 #### Discussion
 > Fazer um breve debate sobre os resultados alcançados. Aqui pode ser feita a análise dos possíveis motivos que certos resultados foram alcançados. Por exemplo:
@@ -200,6 +230,18 @@ We tried different machine learning models for each subdivision of each dataset 
 > * por que o modelo de um cenário não se desempenhou bem em outro?
 >
 > A discussão dos resultados também pode ser feita opcionalmente na seção de Resultados, na medida em que os resultados são apresentados. Aspectos importantes a serem discutidos: É possível tirar conclusões dos resultados? Quais? Há indicações de direções para estudo? São necessários trabalhos mais profundos?
+
+With the results above we can conclude that on all cases, using all features is the best option
+
+> pq?
+
+but the composition with the best results was the one with mixed data from both tables, this might have happened because in this composition we have a bigger variety of data
+
+> mais algo sobre o pq do mixed ter sido melhor?
+
+> tentar hipotetizar do pq o SMOTE foi pior em todos os casos
+
+If we were to choose a model, it would be Random Forest considering that on a overall, this model performed the best on most subdivisions for all compositions.
 
 After testing the models using all features, we noticed that the feature "condition_dur" that we've created was extremely correlated to the target (0.97). Consulting the specialist we also discovered that on a real environment we probably wouldn't have the "stop_condition" value that is used to create the "condition_dur" feature.
 So we've opted to test the models performances excluding this feature as well.
@@ -210,6 +252,7 @@ Here we can see the heatmap of the features correlation:
 
 ![image](https://user-images.githubusercontent.com/38329077/168676969-9f1cb909-da1c-42a7-b157-7d5e1a6b6177.png)
 
+Therefore, it can be seen that the features with higher correlation are the ones created by us, this can explain why the tests with just original features performed so poorly.
 
 ## Project Evolution
 > Seção opcional se houver histórico de mudanças e evolução relevantes.
@@ -226,9 +269,10 @@ cts -> na vida real seria bom, mas como são dados sintéticos não dá pois a m
 
 fazer cross validation -> Limitações
 
+Explicar o motivo para ter usado cada tipo de encoder e suas limitações: por exemplo, atribuir o valor 0 para uma das categorias por ter "consequências"
 
 ## Conclusion
-Explicar o motivo para ter usado cada tipo de encoder e suas limitações: por exemplo, atribuir o valor 0 para uma das categorias por ter "consequências"
+
 
 ### Future work
 
