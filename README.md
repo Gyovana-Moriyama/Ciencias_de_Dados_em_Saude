@@ -16,9 +16,9 @@ In this project we will predict whether patients who had a Acute deep venous thr
 We chose this condition because according to a specialist: 
  * It is a fairly common one, which gives us a good amount of data to work with.
  * It affects both men and women of all ages.
- * It's severity is linked to a lot of different factors, which makes it a non-trivial problem.
+ * Its severity is linked to a lot of different factors, which makes it a non-trivial problem.
 
-We chose to look at a time window of 5 years because it is enough time to treat the underlying cause or to define that the patient belongs to a very high risk group. So the thrombosis would have a higher chance to contribute to the patient death.
+We chose to look at a time window of 5 years because it is enough time to treat the underlying cause or to define that the patient belongs to a very high risk group. So the thrombosis would have a higher chance to contribute to the patient's death.
 
 ### Tools
 *  Pandas
@@ -32,7 +32,7 @@ We chose to look at a time window of 5 years because it is enough time to treat 
 
 ### Bases Adopted for the Study
 
-We choose these two bases because on scenario01 and scenario02 we found a really small number of ocurrencies of our patients of interest.
+We choose these two bases because on scenario01 and scenario02 we found a really small number of occurrences of our patients of interest.
 
 * scenario04
 * scenario03
@@ -59,7 +59,7 @@ The data provided is from a synthetic medical database, Synthea. This one provid
 | STOP            | encounter end date                                                                        |
 | PATIENT         | key that identifies the patient                                                           |
 | ORGANIZATION    | key of the organization that the encounter took place                                     |
-| ENCOUNTERCLASS  | encounter class, as: ambulatory, emergency, inpatient, wellness, ou urgentcare            |
+| ENCOUNTERCLASS  | encounter class, as: ambulatory, emergency, inpatient, wellness, ou urgent care            |
 
  
 
@@ -134,17 +134,17 @@ Our first processing was to convert data columns to *datetime* type, in order to
 
 **cts:**
 
-For this feature we focused specifically on the CT (Computed Tomography) exam. Our belief was that patients with a severe case of thrombosis were more susceptible to take this exam. So we used the *images* table, and counted every occurrence for code = 'CT' for the patient. The count is more relevant than a boolean because the recurrence of this exam also means higher severity for the condition.
+For this feature we focused specifically on the CT (Computed Tomography) exam. When the patient is submitted to CT we can infer that it belongs to a higher risk group. So we used the images table, and counted every different occurrence for code = 'CT' for the patient. The count can be more relevant than a boolean because it not only indicates if the patient was submitted to the exam, but how many times.
 
 **contraceptive, anticoagulant and cnt_medications:**
 
-These 3 features were all created using the *medications* table. Contraceptives and anticoagulants are medicines commonly taken by patients with thrombosis. If a patient has taken a lot of contraceptives it is more susceptible to develop thrombosis, and if a patient has thrombosis but is taking anticoagulants, it is more likely to recover from the condition as anticoagulant is a medicine commonly used to treat thrombosis. We count how many distinct contraceptives and anticoagulants were taken by the patient, it gives more information than just if the patient has taken or not, similar to cts.
+These 3 features were all created using the medications table. Contraceptives and anticoagulants are medicines commonly taken by patients with thrombosis. If a patient has taken contraceptives it is more susceptible to develop thrombosis, and if a patient has thrombosis but is taking anticoagulants, it is more likely to recover from the condition as anticoagulant is a medicine commonly used to treat mild cases of thrombosis. We count how many distinct contraceptives and anticoagulants were taken by the patient, it gives more information than just if the patient has taken or not, similar to cts.
 
-For cnt_medications we counted the amount of different medication taken by each patient, so it may indicate other health issues.
+For cnt_medications we counted the amount of different medications taken by each patient, so it may indicate other health issues.
 
 **cnt_procedures:**
 
-Venous thrombosis may be a result of complications from a surgery. This feature use *procedures* table and count how many surgeries the patient was undergone, patients with a lot of surgeries are more likely to have other serious health issues. 
+Venous thrombosis may be a result of complications from a surgery. This feature uses the procedures table and counts how many surgeries the patient has undergone, the idea here is that maybe patients with a lot of surgeries are more likely to have other serious health issues.
 
 **age:**
 
@@ -152,13 +152,11 @@ This feature may be the actual age of the patient or, if the patient has died, i
 
 **cnt_encounters:**
 
-Patients with a big number of medical encounters are probably patients with more health issues and therefore it has a greater chance of death. So we counted how many different medical encounters the patient had.
+Patients with a big number of medical encounters can be patients with more health issues and therefore it has a greater chance of death. So we counted how many different medical encounters the patient had.
 
 **last_encounter_dur and condition_dur:**
 
-For these features we are interested in the treatment time during the medical encounter for each patient.
-The former, last_encounter_dur, we search when the last medical encounter with thrombosis has started and ended. The difference in days between the two dates is the feature we are looking for. If the encounter has not ended yet, it is the difference of days between the start of the encounter and today.
-The latter, condition_dur, is the difference of days between the first occurrence of the condition until the end of the condition. If the condition has not ended yet, it is the difference of days between the start of the condition and today.
+For these features we are interested in the treatment time during the medical encounter for each patient. The former, last_encounter_dur, we search when the last medical encounter with thrombosis has started and ended. The difference in days between the two dates is the feature we are looking for. If the encounter has not ended yet, it is the difference of days between the start of the encounter and today. The latter, condition_dur, is the difference of days between the start and the end of the condition from the last encounter. If the condition has not ended yet, it is the difference of days between the start of the condition and today.
 
 **target:**
 
@@ -166,25 +164,6 @@ Our ground truth indicates if the patient died within 5 years after the end of t
 
 
 ## Results 
-> Esta seção pode opcionalmente ser apresentada em conjunto com a metodologia, intercalando método e resultados.
->
-> Descreva etapas para obtenção do modelo, incluindo tratamento de dados, se houve.
->
-> Apresente o seu modelo de predição e resultados alcançados.
-> Para cada modelo, apresente no mínimo:
-> * quais os dados sobre o paciente que serão usados para a predição;
-> * qual a abordagem/modelo adotado;
-> * resultados do preditor (apresente da forma mais rica possível, usando tabelas e gráficos - métricas e curva ROC são bem vindos);
-> * breve discussão sobre os resultados obtidos.
->
-> Nesta seção, lembre-se das sugestões de análise:
-> * analisar diferentes composições de treinamento e análise do modelo:
->   * um modelo treinado/validado no cenário 1 e testado no cenário 2 e vice-versa;
->   * um modelo treinado e validado com os dados dos dois cenários;
->   * nos modelos dos dois itens anteriores:
->     * houve diferença de resultados?
->     * como analisar e interpretar as diferenças?
-> * testar diferentes composições de dados sobre o paciente para a predição (por exemplo, quantidade diversificadas de número de itens).
 
 ### The problem: 
 
@@ -207,15 +186,19 @@ For each of this, we still have this subdivisions:
 * Oversampled, using only features that already existed on the original tables
 * Oversampled, removing only the feature "condition_dur"
 
+For "all features" we mean that we are using the following features: *organization*, *age*, *cnt_encounters*, *cts*, *contraceptive*, *anticoagulant*, *cnt_medications*, *cnt_procedures*, *last_encounter_dur*, *condition_dur*, *gender_M*, *encounterclass_ambulatory*, *encounterclass_emergency*, *encounterclass_inpatient*, *encounterclass_outpatient*, *target*.
+
+For "original features" we mean we are using the following features: *gender* and *encounterclass*.
+
 On our exploratory data analysis, we saw that the target was imbalanced:
 
 ![image](https://user-images.githubusercontent.com/38329077/168669739-ba837c90-766b-4cf6-8cb7-708c8b73e5b1.png)
 
-Therefore, we did some tests using SMOTE to do a oversample on the minority class (in this case, class 1), so we have a balanced dataset to train our models. 
+Therefore, we did some tests using SMOTE to do an oversample on the minority class (in this case, class 1), so we have a balanced dataset to train our models. 
 
 ### Models: 
 
-We tried different machine learning models for each subdivision of each dataset composition, such as Random Forest, LGBM, XGBoost and Logistic Regression. We also made some baselines for each dataset composition.
+We tried different machine learning models for each subdivision of each dataset composition, such as Random Forest, LGBM, XGBoost and Logistic Regression. We also made some baselines for each dataset composition, the baseline consists of always guessing that the patient survives.
 
 ### Results
 
@@ -225,21 +208,19 @@ Here we are presenting metrics results for the test.
 
 ![04_03_new](https://user-images.githubusercontent.com/38329077/168700205-3a43b0b0-c175-43ae-b39b-486b4c5644fe.png)
 
-On this composition we can see that in Imbalanced with all features and SMOTE with all features, Random Forest, LGBM and XGBoost achieved 1.0 on all three metrics, which means the models really predicted correct all labels, we believe this happened because of the correlation of the features with target and that the models trained on a larger base compared to the test, so the models really learned how to separate the positive and negative classes, as we can see for AUC = 1.0.
+On this composition we can see that in imbalanced with all features and SMOTE with all features datasets, Random Forest, LGBM and XGBoost achieved 1.0 on all three metrics, which means the models really predicted correct all labels, we believe this happened because of the correlation of the features with target and that the models trained on a larger base compared to the test, so the models really learned how to separate the positive and negative classes, as we can see for AUC = 1.0.
 
-For the tests with just the original features we can see that either on imbalanced and with SMOTE, the models performed poorly, we believe this happened because of the low quantity of features and that the features are not explanatory for the problem, so the models do not learn to separate the positive and negative classes, as we can see for AUC around 0.5. Also, we can see that the models do not really predict positive classes right, as we have really low values for F1 score.
+For the tests with just the original features we can see that either on imbalanced and with SMOTE, the models performed poorly, we believe this happened because of the low quantity of features and that the features are not explanatory for the problem, so the models did not learn to separate the positive and negative classes, as we can see for AUC around 0.5. Also, we can see that the models do not really predict positive classes right, as we have really low values for F1 score and high values of accuracy.
 
-Finally, for tests without 'condition_dur' feature, in the imbalanced case most of the models still perform well, but for the tests with SMOTE, half of models had a low accuracy and F1 score, so we can see that they are not predicting well for both classes, although all of them have high AUC. Therefore we can conclude that even if the models learned how to separate the classes (high AUC), they did not predicted right both classes (low accuracy and low F1 score).
+Finally, for tests without 'condition_dur' feature, in the imbalanced case most of the models still perform well, but for the tests with SMOTE, half of models had a low accuracy and F1 score, so we can see that they are not predicting well for both classes, although all of them have high AUC. Therefore we can conclude that even if the models learned how to separate the classes (high AUC), they did not correctly predict both classes (low accuracy and low F1 score).
 
-In conclusion for this composition we can see that the best option is to use all features and imbalanced data, 
-
-> tentar falar o pq do com SMOTE nao ter sido o melhor
+In conclusion for this composition we can see that the best option is to use all features and imbalanced data, we can also conclude that the data augmentation did not help the models to improve, probably because it didn't do a good job on creating new samples, which could happen since we didn't tune its hyper parameters.
 
 **Scenario03 (70 patients) as train and Scenario04 (630 patients) as test:**
 
 ![03_04_new](https://user-images.githubusercontent.com/38329077/168700183-25bf90ef-1443-43c1-8311-f580aca87ace.png)
 
-On this composition the tests on either imbalanced and with SMOTE data and with all features were the best, this time they did not get 1.0 on any metrics, but got really close. Here the models got high values for all three metrics, so we can see that the models learned how to distinguish between the classes (high AUC) and predicted almost all correct (high accuracy and F1 score).
+On this composition the tests on either imbalanced and with SMOTE data and with all features were the best, this time they did not get 1.0 on any metrics, but got really close. Here the models got high values for all three metrics, so we can see that the models learned how to distinguish between the classes (high AUC) and predicted almost all correctly (high accuracy and F1 score).
 
 For the tests with just the original features we can see that either on imbalanced and with SMOTE data, the models performed poorly. For the tests on imbalanced data, we have a high accuracy but low AUC and F1 score, so we can say that the models might be predicting the majority class (class 0), so they are did not learn how to distinguish between the classes (AUC around 0.5) and are not predicting the positive class right (low F1 score).
 
@@ -251,37 +232,22 @@ In conclusion for this composition, we can see that as the train data was smalle
 
 ![mixed_new](https://user-images.githubusercontent.com/38329077/168700216-6037a8d5-689e-4175-a76e-a6290b42110b.png)
 
-On this composition the tests on either imbalanced and with SMOTE data and with all features were the best Random Forest, LGBM and XGBoost achieved 1.0 on all three metrics, which means that the these models learned how to distinguish between the classes (AUC = 1.0) and predicted both classes right for all cases (accuracy = 1.0 and F1 score = 1.0).
+On this composition the tests on either imbalanced or with SMOTE data, with all features all models except Logistic Regression achieved 1.0 on all three metrics, which means that the these models learned how to distinguish between the classes (AUC = 1.0) and predicted both classes right for all cases (accuracy = 1.0 and F1 score = 1.0).
 
-For the test with just the original features we can see that all the models produced the same scores on either imbalanced and with SMOTE data. For the imbalanced data, we have high accuracy, but low AUC and F1 score, which means that the models did not learn how to distinguish between the classes (AUC around 0.5) and that they are not predicting the positive class right (F1 score low or equals zero), so we can say that the models might be predicting the target ad the majority class (class 0), what would explain the high accuracy and low AUC and F1 score. Considering the data with SMOTE, we have all the three metrics with low values, which indicates that the models are not predicting the majority class as the target, and did not learn to distinguish between the classes and to predict the positive class right.
+For the test with just the original features we can see that all the models produced the same scores on either imbalanced and with SMOTE data. For the imbalanced data, we have high accuracy, but low AUC and F1 score, which means that the models did not learn how to distinguish between the classes (AUC around 0.5) and that they are not predicting the positive class right (F1 score low or equals zero), so we can say that the models might be predicting the target as the majority class (class 0), what would explain the high accuracy and low AUC and F1 score. Considering the data with SMOTE, we have all the three metrics with low values, which indicates that the models are not predicting the majority class as the target, and did not learn to distinguish between the classes and to predict the positive class right.
 
 Finally, for the tests without 'condition_dur', we can see that all models performed well on both imbalanced and with SMOTE data, for all three metrics. Even though the models did not have the best result for this composition, the subdivision got really satisfactory results.
 
 In conclusion for this composition, we can see that the models performed the best with all features on both imbalanced and with SMOTE data.
 
-> Colocar mais alguma coisa na conclusao 
-
 #### Discussion
-> Fazer um breve debate sobre os resultados alcançados. Aqui pode ser feita a análise dos possíveis motivos que certos resultados foram alcançados. Por exemplo:
-> * por que seu modelo alcançou (ou não) um bom resultado?
-> * por que o modelo de um cenário não se desempenhou bem em outro?
->
-> A discussão dos resultados também pode ser feita opcionalmente na seção de Resultados, na medida em que os resultados são apresentados. Aspectos importantes a serem discutidos: É possível tirar conclusões dos resultados? Quais? Há indicações de direções para estudo? São necessários trabalhos mais profundos?
 
-With the results above we can conclude that on all cases, using all features is the best option
+With the results above we can conclude that in all cases, using all features is the best option because the created features are the ones that are more correlated to the target. As for the different compositions, the composition with the best results was the one with mixed data from both tables. This might have happened because in this composition we have a bigger variety of data.
 
-> pq?
+If we were to choose a model, it would be Random Forest considering that on a overall, this model performed the best on most subdivisions for all compositions, even on a reduced train size. But the composition with the best results was the one with mixed data from both tables, this might have happened because in this composition we have a bigger variety of data.
 
-but the composition with the best results was the one with mixed data from both tables, this might have happened because in this composition we have a bigger variety of data
-
-> mais algo sobre o pq do mixed ter sido melhor?
-
-> tentar hipotetizar do pq o SMOTE foi pior em todos os casos
-
-If we were to choose a model, it would be Random Forest considering that on a overall, this model performed the best on most subdivisions for all compositions.
-
-After testing the models using all features, we noticed that the feature "condition_dur" that we've created was extremely correlated to the target (0.97). Consulting the specialist we also discovered that on a real environment we probably wouldn't have the "stop_condition" value that is used to create the "condition_dur" feature.
-So we've opted to test the models performances excluding this feature as well.
+After testing the models using all features, we noticed that the feature "condition_dur" that we've created was extremely correlated to the target (0.97). Consulting the specialist we also discovered that in a real environment we probably wouldn't have the "stop_condition" value that is used to create the "condition_dur" feature.
+So we've opted to test the models' performances excluding this feature as well.
 
 It is important to highlight a disclaimer in regard to the stop_condition information. Acute deep venous thrombosis is a condition that often requires long-term anticoagulation therapy and follow-up. The criteria to consider the "stop" is unclear in the data provided (e.g.: cease anticoagulant therapy, absence of clinical signs or symptoms of thrombosis, adequate pain and edema management, etc.) and may not be applicable in other scenarios.
 
@@ -291,45 +257,37 @@ Here we can see the heatmap of the features correlation:
 
 Therefore, it can be seen that the features with higher correlation are the ones created by us, this can explain why the tests with just original features performed so poorly.
 
-## Project Evolution
-> Seção opcional se houver histórico de mudanças e evolução relevantes.
-> Relate aqui a evolução do projeto: possíveis problemas enfrentados e possíveis mudanças de trajetória. Relatar o processo para se alcançar os resultados é tão importante quanto os resultados.
+## Limitations and Future Work
 
-Limitações:
+Due to a time limitation, there are many aspects of the project that we would want to develop further. 
 
-ordinal encoder
-todos os hospitais do df_train não existem em df_test e vice versa, portanto essa feature será inutil a nao ser que juntemos os 2 dfs e depois façamos um split dessa junçao
+* For the "Organization" feature, we did an Ordinal Encoder because there were 81 distinct organizations on scenario04 alone and we did not want to create one feature for each possible one (one-hot encoding). Doing an Ordinal Encoder means that all categories are contained in a single feature, represented by a numerical value. This implies for the models that there is a numerical ordination between them and some correlations that are actually not true. This is troublesome for some models, like the Logistic Regression, but we believe that not as much for the ones based on decision trees. Another reason that we did Ordinal Encoder was because we had categories for the feature "Organizations" on the test group that was never seen on the train group and doing this way was easier to bypass this situation: we gave every organization unseen before the same value, distinct from every one generated on the train group.
 
-ha um encounterclass no df_train que não existe no df_test
+* The feature "Organizations" ended up being useless on the first two formats of splitting because the organizations contained in each group were mutually exclusive.
 
-cts -> na vida real seria bom, mas como são dados sintéticos não dá pois a maioria dos dados é 0
+* We had the same problem with the "Encounterclass" feature, but this feature only had 4 possible categories, so we did a one-hot encoding and inputted zeros to the category that was nonexistent on the testing set.
 
-fazer cross validation -> Limitações
+* The "cts" feature represents how many CT scans the patient has done. Based on a specialist this is super useful, because it indicates that this patient belongs to a high risk group. But in our data we only have one patient that was submitted to this exam, so this feature didn't help us in the end.
 
-Explicar o motivo para ter usado cada tipo de encoder e suas limitações: por exemplo, atribuir o valor 0 para uma das categorias por ter "consequências"
+* Doing a cross validation would help us see if our models are robust through a lot of different variations of data and remove some of that doubt that the models are only performing well for a specific group of data.
+
+* With more time, we would like to investigate some of our results, plot the ROC curve to have a better understanding of the model's behavior. We would also want to look deeper into the model's metrics for **each** target class.
+
+* Seeing that the data augmentation through SMOTE didn't help us at all, we are curious to see if optimizing the hyper-parameters would change the results obtained. Considering that our features are all categorical or integers, it would also be interesting to do a post processing on the data created to guarantee that the SMOTE algorithm did not generate float values.
+
+* It would be interesting to also see if tuning the hyper-parameters for the models that we chose would give us different results.
+
+* We would like to create a feature that indicates the number of conditions that can contribute to death, because it can indicate the severity of the patient's situation.
+
+* It would be interesting to test scaling the data with different types of scalers, like Min Max Scaler and Standard Scaler and compare the results that we already have, because some of our features have different ranges.
+
 
 ## Conclusion
-
-
-### Future work
-
-Trabalhos Futuros: criar uma feature "quantidade de condições" que diz quantas condições "ruins" aquela pessoa tem
-testar standard e minmax e comparar as performances
-
-fazer tuning dos hyper parameters através de GridSearch, RandomSearch e optuna
-
-seeds diferentes(futuro) no dataset misturado
-
-testar sem o cts
-
-ver importância das features
-
 
 > Destacar as principais conclusões obtidas no desenvolvimento do projeto.
 >
 > Destacar os principais desafios enfrentados.
 >
 > Principais lições aprendidas.
->
-> Trabalhos Futuros:
-> * o que poderia ser melhorado se houvesse mais tempo?
+
+
