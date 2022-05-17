@@ -123,6 +123,8 @@ The data provided is from a synthetic medical database, Synthea. This one provid
  
 ### Our Dataframe
 
+![image](https://user-images.githubusercontent.com/38329077/168708137-d451be18-530b-431b-aa15-065f9f4a3c43.png)
+
 #### Pre-processing
 
 The dataset used the tables *patients*, *encounters*, *organizations*, *conditions*, *images*, *medications* and *procedures*, all merged by the patient id.
@@ -161,6 +163,7 @@ The latter, condition_dur, is the difference of days between the first occurrenc
 **target:**
 
 Our ground truth indicates if the patient died within 5 years after the end of the last encounter with the condition of thrombosis.
+
 
 ## Results 
 > Esta seção pode opcionalmente ser apresentada em conjunto com a metodologia, intercalando método e resultados.
