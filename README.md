@@ -194,6 +194,8 @@ On our exploratory data analysis, we saw that the target was imbalanced:
 
 ![image](https://user-images.githubusercontent.com/38329077/168669739-ba837c90-766b-4cf6-8cb7-708c8b73e5b1.png)
 
+(target plot of scenario04.csv)
+
 Therefore, we did some tests using SMOTE to do an oversample on the minority class (in this case, class 1), so we have a balanced dataset to train our models. 
 
 ### Models: 
