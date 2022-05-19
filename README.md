@@ -292,4 +292,13 @@ Due to a time limitation, there are many aspects of the project that we would wa
 >
 > Principais lições aprendidas.
 
+Destacar os principais desafios enfrentados.
 
+* escolher as tabelas e colunas a serem utilizadas
+* criar novas features
+
+
+Principais lições aprendidas.
+
+* Nem sempre as features que criamos, com base na medicina acabam sendo úteis, depende muito dos dados
+* Porém, fazer feature engineering é muito importante, já que como pudemos observar nos resultados, as features criadas por nós são as principais responsáveis por os modelos irem bem.
