@@ -208,7 +208,7 @@ Here we are presenting metrics results for the test.
 
 **Scenario04 (630 patients) as train and Scenario03 (70 patients) as test:**
 
-![04_03_new](https://user-images.githubusercontent.com/38329077/168700205-3a43b0b0-c175-43ae-b39b-486b4c5644fe.png)
+![04_03_new](https://user-images.githubusercontent.com/38329077/169281372-36907a37-15e1-4bf0-8179-5943e9962f71.png)
 
 On this composition we can see that in imbalanced with all features and SMOTE with all features datasets, Random Forest, LGBM and XGBoost achieved 1.0 on all three metrics, which means the models really predicted correct all labels, we believe this happened because of the correlation of the features with target and that the models trained on a larger base compared to the test, so the models really learned how to separate the positive and negative classes, as we can see for AUC = 1.0.
 
@@ -220,7 +220,7 @@ In conclusion for this composition we can see that the best option is to use all
 
 **Scenario03 (70 patients) as train and Scenario04 (630 patients) as test:**
 
-![03_04_new](https://user-images.githubusercontent.com/38329077/168700183-25bf90ef-1443-43c1-8311-f580aca87ace.png)
+![03_04_new](https://user-images.githubusercontent.com/38329077/169281397-8b71e0ba-ad35-4ae5-a5a7-d41c660f300f.png)
 
 On this composition the tests on either imbalanced and with SMOTE data and with all features were the best, this time they did not get 1.0 on any metrics, but got really close. Here the models got high values for all three metrics, so we can see that the models learned how to distinguish between the classes (high AUC) and predicted almost all correctly (high accuracy and F1 score).
 
@@ -232,7 +232,7 @@ In conclusion for this composition, we can see that as the train data was smalle
 
 **Mixing both and doing a train-test split (630 for train and 70 for test):**
 
-![mixed_new](https://user-images.githubusercontent.com/38329077/168700216-6037a8d5-689e-4175-a76e-a6290b42110b.png)
+![mixed_new](https://user-images.githubusercontent.com/38329077/169281422-4d89588f-4921-48b4-9824-ad4d68cf64c5.png)
 
 On this composition the tests on either imbalanced or with SMOTE data, with all features all models except Logistic Regression achieved 1.0 on all three metrics, which means that the these models learned how to distinguish between the classes (AUC = 1.0) and predicted both classes right for all cases (accuracy = 1.0 and F1 score = 1.0).
 
