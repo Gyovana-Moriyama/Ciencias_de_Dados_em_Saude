@@ -286,19 +286,9 @@ Due to a time limitation, there are many aspects of the project that we would wa
 
 ## Conclusion
 
-> Destacar as principais conclusões obtidas no desenvolvimento do projeto.
->
-> Destacar os principais desafios enfrentados.
->
-> Principais lições aprendidas.
+One of the biggest learnings during this project was the importance of consulting a specialist in order to understand our data better. 
+The first assistance was the directions in which condition to choose. By choosing Acute deep venous thrombosis (disorder) we were able to work with a reasonable amount of data, since it is a relatively common condition; also, our data had age and gender balanced, since it affects both men and women of all ages. These characteristics are highly desirable during data science work. The specialist also was really helpful during features engineering. It played a big part by helping us understand how data should behave on patients with this condition, so we were able to create features that could bring out these specificities. It was noticeable that the features we created were the features with the greatest correlations to the target. Understand which feature to create and use, also helped us to choose which table to use. Tables that are not important to the issue could bring uncertainty and noise to the models.
 
-Destacar os principais desafios enfrentados.
+Regarding train and test steps, we could observe the importance of our features to metric values. Models tested only with original features, balanced and imbalanced, had the weakest results for all batches of each dataset composition. This is also noticeable when we trained using the smaller dataset (Scenario03) and tested using the bigger dataset (Scneario04); even with less data, the model metrics were pretty good. That may indicate that the features were explanatory enough, so the models could learn well even with less data. Lastly, our greatest results came from mixing both datasets, which brought a bigger variety of data for training, and also a higher equity between the train and test sets. We found Random Forest as the best model because this model performed the best on most subdivisions for all compositions.
 
-* escolher as tabelas e colunas a serem utilizadas
-* criar novas features
-
-
-Principais lições aprendidas.
-
-* Nem sempre as features que criamos, com base na medicina acabam sendo úteis, depende muito dos dados
-* Porém, fazer feature engineering é muito importante, já que como pudemos observar nos resultados, as features criadas por nós são as principais responsáveis por os modelos irem bem.
+Finally, another thing to consider was the quality of the data. Since the dataset had data from a large range of conditions and was synthetically created, it may have features that are not important or even are absent from certain conditions, while these features may be crucial for a distinct set of conditions. This led us to a problem with the condition_dur feature; compared to the other features, it had the highest correlation with the target, but it was created using a feature that is not present for the disease in real life, stop_condition. This feature helped us to achieve the best metrics, but we decided to train the model without the feature as well, so it could show a prediction more relatable to real life.
