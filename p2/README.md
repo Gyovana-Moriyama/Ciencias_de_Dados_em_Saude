@@ -1,4 +1,4 @@
-# Project Mortality Prognosis
+# Project 2 - Mortality Prognosis
 
 ## Contextualization of the Proposal
 
