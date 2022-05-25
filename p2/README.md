@@ -1,5 +1,15 @@
 # Project 2 - Mortality Prognosis
 
+## Presentation
+
+This project originated in the context of the activities of the course Science and Data Visualization in Health, offered in the first semester of 2022, at Unicamp.
+
+| Name                    | RA     | Specialization |
+| :---:                   | :---:  |  :---:         |
+| Alexandre Dias Negretti | 233609 | Computing      |
+| Daniel Godoy Marques    | 166213 | Computing      |
+| Gyovana Mayara Moriyama | 216190 | Computing      |
+
 ## Contextualization of the Proposal
 
 In this project we will predict whether patients who had a Acute deep venous thrombosis (disorder) condition (SNOMED-CT: 132281000119108) will die within a maximum of 5 years.
