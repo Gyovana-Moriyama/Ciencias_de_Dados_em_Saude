@@ -6,7 +6,7 @@ Recomenda-se o seguinte índice para encontrar artigos com dados de redes public
 
 A equipe tem a liberdade de adaptar e simplificar o experimento, conforme a disponibilidade dos dados, dos algoritmos e do grau de dificuldade na reprodução.
 
-#Presentation
+# Presentation
 
 This project originated in the context of the activities of the course Science and Data Visualization in Health, offered in the first semester of 2022, at Unicamp.
 
