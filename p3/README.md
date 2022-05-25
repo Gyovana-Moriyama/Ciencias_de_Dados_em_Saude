@@ -4,6 +4,10 @@ The general objective of the project is to reproduce an experiment (totally or p
 
 Recomenda-se o seguinte índice para encontrar artigos com dados de redes publicados: (https://icon.colorado.edu/#!/networks)[https://icon.colorado.edu/#!/networks]
 
+https://academic.oup.com/bioinformatics/article/25/21/2857/227713?login=false#supplementary-data
+
+https://academic.oup.com/nar/article/42/W1/W76/2435686?login=false
+
 A equipe tem a liberdade de adaptar e simplificar o experimento, conforme a disponibilidade dos dados, dos algoritmos e do grau de dificuldade na reprodução.
 
 # Presentation
