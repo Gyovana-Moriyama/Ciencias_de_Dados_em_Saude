@@ -1,4 +1,4 @@
-## Presentation
+## Team 
 
 This project originated in the context of the activities of the course Science and Data Visualization in Health, offered in the first semester of 2022, at Unicamp.
 
