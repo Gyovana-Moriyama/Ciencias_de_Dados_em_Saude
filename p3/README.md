@@ -19,6 +19,8 @@ This project originated in the context of the activities of the course Science a
 # Bibliographic reference of the article read
 > Coloque aqui a referência bibliográfica do artigo lido, incluindo o link para o site.
 
+G. Scardoni, M. Petterlini, & C. Laudanna, "Analyzing biological network parameters with CentiScaPe." Bioinformatics 25(21), 2857–2859 (2009)
+
 https://academic.oup.com/bioinformatics/article/25/21/2857/227713?login=false
 
 # Summary
@@ -30,7 +32,7 @@ https://academic.oup.com/bioinformatics/article/25/21/2857/227713?login=false
 ## Data used as input
 Dataset | Web address | Descriptive summary
 ----- | ----- | -----
-bioinf-2009-0193-File021.sif | https://academic.oup.com/bioinformatics/article/25/21/2857/227713?login=false#supplementary-data | A bipartite network of known human protein kinases and the phosphatases they interact with, as extracted from a global human protein interactome dataset complied from various public databases
+Human kino-phosphatome network (2009) | https://academic.oup.com/bioinformatics/article/25/21/2857/227713?login=false#supplementary-data | A bipartite network of known human protein kinases and the phosphatases they interact with, as extracted from a global human protein interactome dataset complied from various public databases. The used dataset have 549 nodes and 3844 edges.
 
 (Inside the supplement .zip file, see bioinf-2009-0193-File021.sif, which contains a superset of the interactions; extract those interactions among the names in the bioinf-2009-0193-File013.xls file to get the relevant network.)
 
