@@ -32,7 +32,7 @@ https://academic.oup.com/bioinformatics/article/25/21/2857/227713?login=false
 ## Data used as input
 Dataset | Web address | Descriptive summary
 ----- | ----- | -----
-Human kino-phosphatome network (2009) | https://academic.oup.com/bioinformatics/article/25/21/2857/227713?login=false#supplementary-data | A bipartite network of known human protein kinases and the phosphatases they interact with, as extracted from a global human protein interactome dataset complied from various public databases. The used dataset have 549 nodes and 3844 edges.
+Human kino-phosphatome network (2009) | https://academic.oup.com/bioinformatics/article/25/21/2857/227713?login=false#supplementary-data | A bipartite network of known human protein kinases and the phosphatases they interact with, as extracted from a global human protein interactome dataset complied from various public databases. The dataset has 549 nodes and 3844 edges.
 
 (Inside the supplement .zip file, see bioinf-2009-0193-File021.sif, which contains a superset of the interactions; extract those interactions among the names in the bioinf-2009-0193-File013.xls file to get the relevant network.)
 
