@@ -21,7 +21,7 @@ https://academic.oup.com/bioinformatics/article/25/21/2857/227713?login=false
 # Summary
 > Escreva um breve do artigo (com as suas palavras, não deve ser copiado texto do artigo).
 
-The paper proposes a Cytoscape plug-in called CentiScape. This plug-in calculates many network centrality parameters and allows users to analyze existing correlations between providen data and node centrality values calculated by the plug-in. To demonstrate the proposed plug-in the authors test the plug-in on the human-phosphatome base, a global human protein interactome dataset complied from some public datatsets. They extract a subset of this network, with only known interactions between human protein kinases and phosphatases. 
+The paper proposes a Cytoscape plug-in called CentiScape. This plug-in calculates many network centrality parameters and allows users to analyze existing correlations between providen data and node centrality values calculated by the plug-in. To demonstrate the proposed plug-in the authors test the plug-in on the human-phosphatome base, a global human protein interactome dataset complied from some public datatsets. They extract a subset of this network, with only known interactions between human protein kinases and phosphatases and compute several centrality values and plots.
 
 # Brief description of the experiment/analysis of the article that was replicated
 > Descreva brevemente a parte do artigo cujo experimento ou análise foi reproduzido. Explique o que foi usado como entrada e saída.
