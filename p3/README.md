@@ -2,10 +2,6 @@
 
 The general objective of the project is to reproduce an experiment (totally or partially) from a scientific paper. The topic of the article have to be related to Network Science and Health.
 
-> Recomenda-se o seguinte índice para encontrar artigos com dados de redes publicados: (https://icon.colorado.edu/#!/networks)
-
-> A equipe tem a liberdade de adaptar e simplificar o experimento, conforme a disponibilidade dos dados, dos algoritmos e do grau de dificuldade na reprodução.
-
 # Presentation
 
 This project originated in the context of the activities of the course Science and Data Visualization in Health, offered in the first semester of 2022, at Unicamp.
@@ -17,17 +13,24 @@ This project originated in the context of the activities of the course Science a
 | Gyovana Mayara Moriyama | 216190 | Computing      |
 
 # Bibliographic reference of the article read
-> Coloque aqui a referência bibliográfica do artigo lido, incluindo o link para o site.
 
-G. Scardoni, M. Petterlini, & C. Laudanna, "Analyzing biological network parameters with CentiScaPe." Bioinformatics 25(21), 2857–2859 (2009)
+[1] G. Scardoni, M. Petterlini, & C. Laudanna, "Analyzing biological network parameters with CentiScaPe." Bioinformatics 25(21), 2857–2859 (2009)
 
 https://academic.oup.com/bioinformatics/article/25/21/2857/227713?login=false
 
 # Summary
 > Escreva um breve do artigo (com as suas palavras, não deve ser copiado texto do artigo).
 
+The paper proposes a Cytoscape plug-in called CentiScape. This plug-in calculates many network centrality parameters and allows users to analyze existing correlations between providen data and node centrality values calculated by the plug-in. To demonstrate the proposed plug-in the authors test the plug-in on the human-phosphatome base, a global human protein interactome dataset complied from some public datatsets. They extract a subset of this network, with only known interactions between human protein kinases and phosphatases. 
+
 # Brief description of the experiment/analysis of the article that was replicated
 > Descreva brevemente a parte do artigo cujo experimento ou análise foi reproduzido. Explique o que foi usado como entrada e saída.
+
+The experiment was done using the human-phosphatome base (bioinf-2009-0193-File021.sif), extracting a subset of this network, keeping only known interactions between human protein kinases and phosphatases (the extraction was done using bioinf-2009-0193-File013.xls file). So after the filtering, the network had 549 nodes and 3844 edges.
+
+The authors use CentiScape to calculate centrality paramenters. Firsly, they make a general overview of the global topological properties, that comes from min, max and average values of all computed centralities along with the diameter and the average distance of the network. With these centralities values, they make a first ranking of human kinases and phosphatases according to theus central role in the network. After, they plot degree over degree of the network, which shows that the distribution is not uniform. To confirm this suggestion, they analyze the centroid, so they plot centroid over centroid, which provided a linear distribution and as for degree, the distribution was not uniform.
+
+
 
 ## Data used as input
 Dataset | Web address | Descriptive summary
