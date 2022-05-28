@@ -186,7 +186,7 @@ For each of this, we still have this subdivisions:
 * Oversampled, using only features that already existed on the original tables
 * Oversampled, removing only the feature "condition_dur"
 
-For "all features" we mean that we are using the following features: *organization*, *age*, *cnt_encounters*, *cts*, *contraceptive*, *anticoagulant*, *cnt_medications*, *cnt_procedures*, *last_encounter_dur*, *condition_dur*, *gender_M*, *encounterclass_ambulatory*, *encounterclass_emergency*, *encounterclass_inpatient*, *encounterclass_outpatient*, *target*.
+For "all features" we mean that we are using the following features: *organization*, *age*, *cnt_encounters*, *cts*, *contraceptive*, *anticoagulant*, *cnt_medications*, *cnt_procedures*, *last_encounter_dur*, *condition_dur*, *gender_M*, *encounterclass_ambulatory*, *encounterclass_emergency*, *encounterclass_inpatient*, *encounterclass_outpatient*.
 
 For "original features" we mean we are using the following features: *gender* and *encounterclass*.
 
