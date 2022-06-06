@@ -97,3 +97,10 @@ Finally, an analysis of PTPN1, which presents the highest degree among all the p
 
 ## Phosphorylation Node Weights
 
+As discussed before, we were able to import the Nodes Weights, which are visible in the Node Table by disapplying the parameters filters. But we were not able to plot the same graphs. For some reason, the plot tool didn't work, even with the same axis as shown in the graph.
+
+Following, at the left, is the original scatter plot and at the right is a sample of our Node Table:
+
+![](https://i.imgur.com/1wHGbQz.png)
+
+It's possible to match the coordinates between the plot and the table. That means that we achieved the same results as the author, but without the graph that the CentiScaPe couldn't generate.
