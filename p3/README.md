@@ -72,3 +72,28 @@ The first plot tool manages to plot all parameter metrics for each node in the n
 > Apresente os resultados obtidos pela sua adaptação.
 > Confronte os seus resultados com aqueles do artigo.
 > Esta seção opcionalmente pode ser apresentada em conjunto com o método.
+
+##  Global Topological Properties Overview
+
+We were able to reproduce the same graphs the author created using the plot by centralities and plot by node tools. The following graph shows nodes Degree versus its Centroid value. On the left is the original graph and on the right our replica:
+
+![](https://i.imgur.com/SffIQps.png)
+
+It's possible to see that we achieved similar results, considering the dot shapes are random and not correspondents between both graphs. The node with the highest degree and centroid is MAPK1, whose metrics are shown below. At the top is the original graph and at the bottom is our replica:
+
+![](https://i.imgur.com/wrTPajl.png)
+
+We were able to replicate the same results, with the addition of more metrics due to the new version of the plug-in. These new parameters can help to understand the significance of this node.
+
+The following graphs show centroid over centroid and degree over degree, both also replicated by us. According to the author, the distribution is not uniform: many nodes display low degree/centroid and only a few nodes with high degree/centroid, according to the scale-free architecture of biological networks.
+
+![](https://i.imgur.com/MVRxvdg.png)
+
+![](https://i.imgur.com/mqjho2O.png)
+
+Finally, an analysis of PTPN1, which presents the highest degree among all the phosphatases and a rather high score for other centralities. Similar to MAPK1, we were able to replicate the same results, with the additional of more metrics.
+
+![](https://i.imgur.com/DXyUsU9.png)
+
+## Phosphorylation Node Weights
+
