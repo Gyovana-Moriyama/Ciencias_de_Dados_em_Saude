@@ -43,9 +43,30 @@ Human kino-phosphatome network (2009) | https://academic.oup.com/bioinformatics/
 > Método usado para a análise -- adaptações feitas, ferramentas utilizadas, abordagens de análise adotadas e respectivos algoritmos.
 > Etapas do processo reproduzido.
 
-To reproduce the experiments of the article we used Cytoscape with the plug-in proposed in the paper CentiScaPe.
+To reproduce the article experiments we used Cytoscape 3.9.1 for Windows 64bit (https://cytoscape.org/) with the plug-in proposed in the paper, CentiScaPe 2.2 (https://apps.cytoscape.org/apps/centiscape). 
 
+The filtered network was imported through File > Import > Network from File. To configure the nodes and edges, the following setup was made:
 
+![Network import settings](https://i.imgur.com/NBMhmai.png)
+
+After importing the network, it is possible to import the Nodes Attributes through File > Import > Table from File. In order to do that, we changed the PMNs files (bioinf-2009-0193-File017.NA, bioinf-2009-0193-File018.NA, bioinf-2009-0193-File019.NA) replacing equal signal for comma and saving it as csv. At the import settings, the following configuration was used:
+
+![Import Table settings](https://i.imgur.com/J0BKuyK.png)
+
+After importing the three tables, Cytoscape assign the weight for each node adding a column for each weight at the Nodes Table.
+
+CentiScape is available in the Apps tab, after being installed through jar file or App Manager.
+At the date the paper was written, CentiScaPe was able to calculate the following centrality parameters:  Average Distance, Diameter, Degree, Stress, Betweenness, Radiality, Closeness, Centroid Value and Eccentricity. But the version used in this replication is able to calculate the same parameters plus EigenVector, Bridging, Edge Betweenness. To calculate all the parameters, the following setup was made:
+
+![CentiScaPe settings](https://i.imgur.com/ZlHgEEm.png)
+
+The process finished in around 5 minutes. It didn't take too long because of the low number of nodes and edges, even calculating all the parameters the plug-in offers. A column is added to the Node Table for each parameter calculated.
+
+After the process has been completed, CentiScape Results panel becomes visible, showing a filter for each parameter, followed by two plot tools. 
+
+![CentiScaPe results panel](https://i.imgur.com/gj58x5K.png)
+
+The first plot tool manages to plot all parameter metrics for each node in the network, and the second plot tool enables to compare two parameters using a scatter plot.
 
 # Results
 > Apresente os resultados obtidos pela sua adaptação.
