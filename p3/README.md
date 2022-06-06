@@ -43,7 +43,10 @@ Human kino-phosphatome network (2009) | https://academic.oup.com/bioinformatics/
 > Método usado para a análise -- adaptações feitas, ferramentas utilizadas, abordagens de análise adotadas e respectivos algoritmos.
 > Etapas do processo reproduzido.
 
-To reproduce the article experiments we used Cytoscape 3.9.1 for Windows 64bit (https://cytoscape.org/) with the plug-in proposed in the paper, CentiScaPe 2.2 (https://apps.cytoscape.org/apps/centiscape). 
+To reproduce the article experiments we used Cytoscape 3.9.1 for Windows 64bit (https://cytoscape.org/) with the plug-in proposed in the paper, CentiScaPe 2.2 (https://apps.cytoscape.org/apps/centiscape). And to learn how to use Cytoscape and CentiScaPe, we used the following links:
+
+- [Cytoscape: Working with attributes](http://miriamposner.com/classes/dh201w19/tutorials-guides/network-analysis/cytoscape-working-with-attributes/).
+- [CentiScape User Guide](http://www.cbmc.it/~scardonig/centiscape/CentiScaPefiles/CentiScaPeUserGuide.pdf)
 
 The filtered network was imported through File > Import > Network from File. To configure the nodes and edges, the following setup was made:
 
