@@ -4,3 +4,5 @@ To reproduce the article experiments we used Cytoscape 3.9.1 for Windows 64bit (
 
 - [Cytoscape: Working with attributes](http://miriamposner.com/classes/dh201w19/tutorials-guides/network-analysis/cytoscape-working-with-attributes/).
 - [CentiScape User Guide](http://www.cbmc.it/~scardonig/centiscape/CentiScaPefiles/CentiScaPeUserGuide.pdf)
+
+CentiScaPe can be download on Cytoscape through App Manager.
