@@ -1,26 +1,8 @@
-# Projeto 4 – Classificação de lesões de substância branca no Lúpus
+# Project 4 –  Classification of white matter lesions in lupus
 
-O objetivo geral do projeto é, a partir de uma classificador treinado em imagens de ressonância do cérebro para diferenciar lesões isquêmicas e desmielinizantes, identificar qual a etiologia mais provável das lesões presentes em pacientes de Lúpus Eritematoso Sistêmico (LES).
 
-A equipe pode usar qualquer tipo de classificador para a tarefa, desde o SVM já treinado e entregue na Atividade 11, como outro classificador baseado ou não em DL. Os dados de teste não devem ser incorporados no treinamento do classificador.
 
-O conjunto de dados de lesões de pacientes de LES foram compartilhados pelo Google Drive (link nas instruções do P4 no Classroom).
-
-Para o processamento dos dados e treinamento do classificador, sugere-se usar notebooks (e.g., Jupyter).
-
-## Instruções para o Relatório Final
-
-Segue abaixo o modelo de como deve ser documentada a entrega.
-> Tudo o que aparece neste modo de citação, ou indicado entre `<...>`, se refere a algo que deve ser substituído pelo indicado. No modelo são colocados exemplos ilustrativos, que serão substituídos pelos do seu projeto.
-
-Se o relatório for feito em um notebook, o modelo a seguir pode ser colocado dentro do notebook diretamente. Nesse caso, coloque no markdown do projeto (fora do notebook) uma cópia dos dados até a seção de `Apresentação` e um link para o notebook com o relatório.
-
-# Modelo Relatório Final de Projeto P4
-
-# Projeto `<Título em Português>`
-# Project `<Title in English>`
-
-# Apresentação
+# Presentation
 
 This project originated in the context of the activities of the course Science and Data Visualization in Health, offered in the first semester of 2022, at Unicamp.
 
@@ -30,13 +12,25 @@ This project originated in the context of the activities of the course Science a
 | Daniel Godoy Marques    | 166213 | Computing      |
 | Gyovana Mayara Moriyama | 216190 | Computing      |
 
-# Introdução
+# Contextualization of the Proposal
 > Apresentação de forma resumida do problema (contexto) e a pergunta que se quer responder.
 
-## Ferramentas
-> Listagem das ferramentas utilizadas (na forma de itens).
+The objective of this project is, given resonance images of ischemic and demyelinating lesions in the brain white matter, train a classifier that learns how to differentiate this lesions. So, using this trained classifier we need to answer the following question:
 
-## Preparo e uso dos dados
+Lupus white matter lesions etiology are more similar to demyelinating or ischemic lesions?
+
+## Tools
+*  Numpy
+*  Pandas 
+*  Cv2
+*  Matplotlib
+*  Pillow
+*  Scipy
+*  glrlm
+*  Scikit-Image
+*  Scikit-Learn
+
+## Pre-processing and data usage
 
 > Descreva o pipeline de pré-processamento dos dados:
 * normalização (se houver)
@@ -44,6 +38,21 @@ This project originated in the context of the activities of the course Science a
 * uso das máscaras (se houver)
 * extração de atributos (se houver)
 * seleção de atributos (se houver)
+> Justificar as escolhas
+
+###  Min Max Normalization on raw images:
+
+### Mask application:
+
+### Dataset creation:
+
+* Label and id creation
+* Feature extraction:
+  * Features extracted from histogram
+  * Features extracted from GLCM
+  * Features extracted rom GLRLM
+  * Features extracted from LBP
+ * Features selection: remove lbp features that the ratio between the sum of the column and the size of the dataset if less than 10. We do this to remove lbp columns that the majority value is 0.
 
 
 # Metodologia
