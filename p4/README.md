@@ -19,7 +19,7 @@ The objective of this project is, given resonance images of ischemic and demyeli
 
 Lupus white matter lesions etiology are more similar to demyelinating or ischemic lesions?
 
-## Tools
+# Tools
 *  Numpy
 *  Pandas 
 *  Cv2
@@ -30,7 +30,7 @@ Lupus white matter lesions etiology are more similar to demyelinating or ischemi
 *  Scikit-Image
 *  Scikit-Learn
 
-## Pre-processing and data usage
+# Pre-processing and data usage
 
 > Descreva o pipeline de pré-processamento dos dados:
 * normalização (se houver)
@@ -55,7 +55,7 @@ Lupus white matter lesions etiology are more similar to demyelinating or ischemi
  * Features selection: remove lbp features that the ratio between the sum of the column and the size of the dataset if less than 10. We do this to remove lbp columns that the majority value is 0.
 
 
-# Metodologia
+# Methodology
 > Descreva o classificador escolhido e o pipeline de treinamento:
 * split dos dados de treinamento
 * escolha de parâmetros do classificador
@@ -71,17 +71,17 @@ Lupus white matter lesions etiology are more similar to demyelinating or ischemi
 > * apresente os resultados de forma quantitativa e qualitativa
 > * tenha em mente que quem irá ler o relatório é uma equipe multidisciplinar. Descreva questões técnicas, mas também a intuição por trás delas.
 
-# Conclusão
+# Conclusion
 > Destacar as principais conclusões obtidas no desenvolvimento do projeto.
 >
 > Destacar os principais desafios enfrentados.
 >
 > Principais lições aprendidas.
 >
-> Trabalhos Futuros:
+## Future Work
 > * o que poderia ser melhorado se houvesse mais tempo?
 
-# Referências Bibliográficas
+# References
 > Lista de artigos, links e referências bibliográficas (se houver).
 >
 > Fiquem à vontade para escolher o padrão de referenciamento preferido pelo grupo.
