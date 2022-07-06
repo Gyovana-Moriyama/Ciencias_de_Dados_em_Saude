@@ -111,7 +111,7 @@ After choosing the best model, we were able to elect the most important features
 
 <img src="assets/features_importance.png" alt="Feature Importance" title="Feature Importance">
 
-In the graph above are shown the most important features; both high positive and negative values indicate the importance of the feature to help the model converge. Therefore, from all 26 most importante features, 10 are LBP features, which means a high contribution to the model by of features that describes the pattern texture of the image, which may imply that SLE brain lesion has a characteristic texture that differ from a ischemic (AVC) and demyelinating (EM) lesion.
+In the graph above are shown the most important features; both high positive and negative values indicate the importance of the feature to help the model converge. Therefore, from all 26 most importante features, 10 are LBP features, which means a high contribution to the model of features that describes the pattern texture of the image, which may imply that SLE brain lesion has a characteristic texture that differ from a ischemic (AVC) and demyelinating (EM) lesion.
 
 # Conclusion
 > Destacar as principais conclusões obtidas no desenvolvimento do projeto.
