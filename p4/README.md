@@ -117,7 +117,14 @@ In the graph above are shown the most important features; both high positive and
 > Destacar os principais desafios enfrentados.
 >
 > Principais lições aprendidas.
->
+
+
+Working with images has its differences and similarities compared to working with structured data. It's important to understand how to extract features from the image that didn't seen so obvious than extracting features from structured. For example, a histogram of an image by itself does not have much information, but features extracted from the histogram are way more useful.
+
+Same as structured data, image data also must be cleaned and normalized, but with different methods. When using masks, it's important to check if the mask has only 0 and 1 values and if the size of the mask is adequate to its corresponding image. There are plenty of methods of normalization for images, and each one of them is more suitable for one kind of image. For example, we wanted to use MAD normalization, but this method is not compatible with images that have a majority of zeros.
+
+Finally, it's curious to notice that the lesions are very similar to each other by just beholding it, but even though it's possible to build a models to learn it's differences and particularities
+
 ## Future Work
 > * o que poderia ser melhorado se houvesse mais tempo?
 
