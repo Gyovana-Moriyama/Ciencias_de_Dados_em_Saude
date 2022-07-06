@@ -127,4 +127,4 @@ Finally, it's curious to notice that the lesions are very similar to each other 
 
 ## Future Work
 > * o que poderia ser melhorado se houvesse mais tempo?
-
+We'd like to use Neural Network and Deep Learning in this work. It's widely used with image processing and AI Health Analisys. It would be interesting because it's a completely different method from ours and also could bring good results. Since we were concerned with the time needed to use learn, implement and test it, we decided to stick to SVM and finish the work only using the model we developed prior.
